@@ -8,7 +8,20 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Password Length and acceptable values
+
+const values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+
+let pasword = "";
+
+// Password char loop
+for(var i = 0; i <== complexity; i++){
+    password = password + values.charAt(Math.floor(Math.random() * Math.floor(value.length))
+}
+
+}
