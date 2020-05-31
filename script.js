@@ -41,7 +41,7 @@ const minimumLowerCase = "";
 // Generator
 const functionArray = {
   getNumbers: function() {
-    return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+    return String.fromCharCode(Math.floor(Math.random() * 48 + 10));
   }
   getSpecial: function() {
     return String.fromCharCode(Math.floor(Math.random() * special.length)
@@ -52,11 +52,12 @@ const functionArray = {
   }
 
   getUpperCase: function() {
-    return String.fromCharCode(math.foor(Math.random() *26 + 65));
+    return String.fromCharCode(math.foor(Math.random() * 26 + 65));
   }
 };
+
 // Checker
-  if (lowerCase===true) {
+  if (lowerCase=== true) {
     minimumLowerCase = functionArray.getLowerCase();
     minimumCount++;
   }
@@ -76,9 +77,30 @@ const functionArray = {
     minimumSpecial = functionArray.getSpecial();
     minimumCount++;
   }
+
+
   
+  const randomPasswordGen = "";
 
 
+// Random Char Loop
+  for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) { 
+  const randomNumberPicked = Math.floor(Math.random() * 4);
+
+  randomPasswordGen += randomNumberPicked;
+
+
+}
+
+// Char Added to password
+  randomPasswordGen += minimumNumbers;
+  randomPasswordGen += minimumLowerCase;
+  randomPasswordGen += minimumUpperCase;
+  randomPasswordGen += minimumSpecial;
+
+  return randomPasswordGen;
+
+}
 
 
   
