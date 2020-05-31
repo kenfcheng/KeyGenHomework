@@ -38,8 +38,47 @@ const minimumNumbers = "";
 const minimumUpperCase = "";
 const minimumLowerCase = "";
 
+// Generator
 const functionArray = {
   getNumbers: function() {
     return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
   }
-}
+  getSpecial: function() {
+    return String.fromCharCode(Math.floor(Math.random() * special.length)
+  }
+
+  getLowerCase: function() {
+    return String.fromCharCode(math.floor(Math.random() * 26 + 97));
+  }
+
+  getUpperCase: function() {
+    return String.fromCharCode(math.foor(Math.random() *26 + 65));
+  }
+};
+// Checker
+  if (lowerCase===true) {
+    minimumLowerCase = functionArray.getLowerCase();
+    minimumCount++;
+  }
+
+  if (numbers === true) {
+    minimumNumbers = funcitonArray.getNumbers();
+    minimumCount++;
+
+  }
+
+  if (Uppercase === true) {
+    minimumUpperCase = functionArray.getUpperCase();
+    minimumCount++;
+  }
+
+  if (Special === true){
+    minimumSpecial = functionArray.getSpecial();
+    minimumCount++;
+  }
+  
+
+
+
+
+  
