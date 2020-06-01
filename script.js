@@ -1,104 +1,108 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
 
 
+  // Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// Write password to the #password input
+function writePassword() {
+  let password = generatePassword();
+  const passwordText = document.querySelector("#password");
 
-// Password Length and acceptable values
+  passwordText.value = password;
 
-const values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
 
-// Generating Password Prompts:
-function generatePassword() {
-  let passwordLength = prompt("Enter Number of Characters for Password");
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
-  const special = confirm("Do you want special characters?");
+// Password Length and acceptable values
 
-  const numbers = confirm("Would you like numbers in password?");
+const special = "!@#$%^&*()_+";
+const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowerCase = "abcdefhijklmnopqrstuvwxyz";
+const numbers = "0123456789";
 
-  const upperCase = confirm("Do you want upper cases?");
 
-  const lowerCase = confirm("Do you want lower cases?");
+
+// Generating Password Prompts:
+function generatePassword() {
+  let passwordLength = prompt("Enter Number of Characters for Password");
+
+  const special = confirm("Do you want special characters?");
+
+  const numbers = confirm("Would you like numbers in password?");
+
+  const upperCase = confirm("Do you want upper cases?");
+
+  const lowerCase = confirm("Do you want lower cases?");
 }
 
-// Minimums
-const minimumCount = 0;
+// Minimums
+const minimumCount = 0;
 
-const minimumSpecial = "";
-const minimumNumbers = "";
-const minimumUpperCase = "";
-const minimumLowerCase = "";
+const minimumSpecial = "";
+const minimumNumbers = "";
+const minimumUpperCase = "";
+const minimumLowerCase = "";
 
-// Generator
-const functionArray = {
-  getNumbers: function() {
-    return String.fromCharCode(Math.floor(Math.random() * 48 + 10));
-  }
-  getSpecial: function() {
-    return String.fromCharCode(Math.floor(Math.random() * special.length)
-  }
+// Generator
+const functionArray = [
+  function getNumbers() {
+    return String.fromCharCode(Math.floor(Math.random() * 48 + 10));
+  },
+  
+    function getSpecial() {
+    return String.fromCharCode(Math.floor(Math.random() * special.length)
+  },
 
-  getLowerCase: function() {
-    return String.fromCharCode(math.floor(Math.random() * 26 + 97));
-  }
+  function getLowerCase() {
+    return String.fromCharCode(math.floor(Math.random() * 26 + 97));
+  },
 
-  getUpperCase: function() {
-    return String.fromCharCode(math.foor(Math.random() * 26 + 65));
-  }
-};
+  function getUpperCase() {
+    return String.fromCharCode(math.foor(Math.random() * 26 + 65));
+  }
+];
 
-// Checker
-  if (lowerCase=== true) {
-    minimumLowerCase = functionArray.getLowerCase();
-    minimumCount++;
-  }
+// Checker
+  if (lowerCase=== true) {
+    minimumLowerCase = functionArray.getLowerCase();
+    minimumCount++;
+  }
 
-  if (numbers === true) {
-    minimumNumbers = funcitonArray.getNumbers();
-    minimumCount++;
+  if (numbers === true) {
+    minimumNumbers = funcitonArray.getNumbers();
+    minimumCount++;
 
-  }
+  }
 
-  if (Uppercase === true) {
-    minimumUpperCase = functionArray.getUpperCase();
-    minimumCount++;
-  }
+  if (Uppercase === true) {
+    minimumUpperCase = functionArray.getUpperCase();
+    minimumCount++;
+  }
 
-  if (Special === true){
-    minimumSpecial = functionArray.getSpecial();
-    minimumCount++;
-  }
+  if (Special === true){
+    minimumSpecial = functionArray.getSpecial();
+    minimumCount++;
+  }
 
+  
+  const randomPasswordGen = "";
 
-  
-  const randomPasswordGen = "";
+// Random Char Loop
+  for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) { 
+  const randomNumberPicked = Math.floor(Math.random() * 4);
 
-
-// Random Char Loop
-  for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) { 
-  const randomNumberPicked = Math.floor(Math.random() * 4);
-
-  randomPasswordGen += randomNumberPicked;
-
+  randomPasswordGen += randomNumberPicked;
 
 }
 
-// Char Added to password
-  randomPasswordGen += minimumNumbers;
-  randomPasswordGen += minimumLowerCase;
-  randomPasswordGen += minimumUpperCase;
-  randomPasswordGen += minimumSpecial;
+// Char Added to password
+  randomPasswordGen += minimumNumbers;
+  randomPasswordGen += minimumLowerCase;
+  randomPasswordGen += minimumUpperCase;
+  randomPasswordGen += minimumSpecial;
 
-  return randomPasswordGen;
+  return randomPasswordGen;
 
 }
 
