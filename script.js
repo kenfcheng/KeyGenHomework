@@ -6,8 +6,13 @@ const includLowerCasesEl = document.getElementById('includeLowercases')
 const includeNumbersEl = document.getElementById
 ('includeNumbers')
 const includeSpecialCharactersEl = document.getElementById('includeSpecialCharacters')
-
 const form = document.getElementById('PasswordGenerator')
+
+//Tells Array each individual char codes
+const Uppercases_Char_Codes = arrayFromLowtoHigh(65, 90)
+const Lowercases_Char_Codes = arrayFromLowtoHigh(97, 122)
+const Numbers_Char_Codes = arrayFromLowtoHigh(48, 57)
+const SpecialCharacters_Char_Codes = arrayFromLowtoHigh(33, 47).concat( arrayFromLowtoHigh(58, 64))
 
 characterAmountNumber.addEventListener('input', characterAmount)
 characterAmountRange.addEventListener('input', characterAmount)
@@ -22,9 +27,9 @@ form.addEventListener('generate', event => { event.preventDefault()
   const password = generatePassword(characterAmount, includeUppercases, includeLowercases, includeNumbers, includeSpecialCharacters) { 
 })
 
-//Begin array from
+//Where array begins from
 function generatePassword(characterAmount, includeUppercases, includeLowercases, includeNumbers, includeSpecialCharacters) {
-  String.fromCharCode(97) //ASCII Code
+  String.fromCharCode(65) //ASCII Code
 }
 //Indicates the array loop from low to high
 function arrayFromLowtoHigh(low, high) {
@@ -35,6 +40,7 @@ function arrayFromLowtoHigh(low, high) {
   }
   return array
 }
+
 
 function characterAmount(event) {
   const value = event.target.value
