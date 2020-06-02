@@ -24,10 +24,17 @@ form.addEventListener('generate', event => { event.preventDefault()
 
 //Begin array from
 function generatePassword(characterAmount, includeUppercases, includeLowercases, includeNumbers, includeSpecialCharacters) {
-  String.fromCharCode(97)
+  String.fromCharCode(97) //ASCII Code
 }
+//Indicates the array loop from low to high
+function arrayFromLowtoHigh(low, high) {
+  const array = []
+  for (let i = low; i <= high; i++) {
+    array.push(i)
 
-function arrayFromLowtoHigh(low, high)
+  }
+  return array
+}
 
 function characterAmount(event) {
   const value = event.target.value
