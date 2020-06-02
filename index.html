@@ -8,7 +8,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form name="Generator">
+    <form id="Password Generator" class="form">
+      <label for="characterAmountNumber">Number of Characters</label>
+      <input type="range" min="8" max="128" value="12" id="characterAmountRange">
+      <input type="number" min="8" max="128" value="12" id="characterAmountNumber">
+
+      <label for="includeUppercases">Include Uppercases</label>
+      <input type="checkbox" id="includeUppercases">
+
+      <label for="includeLowercases">Include Lowercases</label>
+      <input type="checkbox" id="includeLowercases">
+
+      <label for="includeNumbers">Include Numbers</label>
+      <input type="checkbox" id="includeNumbers">
+
+      <label for="includeSpecialCharacters">Include Special Characters</label>
+      <input type="checkbox" id="includeSpecialCharacters">
+
       <div class="wrapper">
         <header>
           <h1>Password Generator</h1>
